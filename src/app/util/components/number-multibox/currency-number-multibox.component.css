@@ -1,0 +1,36 @@
+.number-box {
+  margin-top: 5px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.label {
+  text-align: center;
+  color: white;
+  color:white;
+  font-size: 11pt;
+}
+
+.number {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+.right-box {
+  display: table-cell;
+  position: relative;
+  width: 15%;
+  color: white;
+  background: red
+}
+
+.left-box {
+  display: table-cell;
+  position: relative;
+  width: 60%;
+  padding: 10px;
+}

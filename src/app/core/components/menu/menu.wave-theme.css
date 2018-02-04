@@ -1,0 +1,36 @@
+/**
+* DARK THEME
+*/
+.wave-theme-app-menu{
+  background: #2F2F2F;
+  color:white;
+}
+
+#wave-theme-links{
+  margin:0;
+  width:100%;
+  list-style: none;
+}
+
+#wave-theme-links > li{
+  padding:15px;
+  padding-left:25px;
+  margin-left:0;
+}
+
+#wave-theme-links > li:hover{
+  cursor:pointer;
+  background: #2c2e3f;
+}
+
+.wave-theme:hover{
+  border-right:6px solid #668db5;
+  transition:0.2s;
+}
+
+.wave-theme-active-link{
+  background: rgb(46, 50, 78);
+  color:white;
+  border-right:6px solid #668db5;
+  transition:0.2s;
+}

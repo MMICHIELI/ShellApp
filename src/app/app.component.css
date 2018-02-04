@@ -1,0 +1,14 @@
+.app-container {
+  z-index: 10;
+  margin-top: 25px;
+  padding-top:5px;
+}
+
+.reduce {
+  margin-left: 230px;
+  transition:0.3s;
+}
+
+.extend {
+  transition:0.3s;
+}

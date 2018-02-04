@@ -1,0 +1,42 @@
+<div>
+  <table class="table-consult">
+    <thead>
+    <tr class="headers">
+      <th *ngIf="withCheckBoxes" class="checkBox-column {{theme}}-block-title"
+          style="width:40px;">
+        <md-checkbox
+          id="check-all"
+          [ngClass]="rows !== null ? theme+'-light':''"
+          (change)="selectAllItem()"
+          [(ngModel)]="selectAllItems">
+        </md-checkbox>
+      </th>
+      <th *ngFor="let column of columns" class="{{theme}}-block-title" mandatory="true"
+          [ngStyle]="{'width': column.columnWidth}">
+        {{column.label | translate}}<span *ngIf="column.isMandatory"
+                                          style="color: white; font-weight: normal"> *</span>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of rows; let j = index" class="tr-consult"
+        [ngClass]="{'regroup-row-1': row.rowGrp === true, 'regroup-row-2': row.rowGrp === false }">
+      <td *ngIf="withCheckBoxes" class="td-checkbox">
+        <md-checkbox id="{{'checkbox' + i}}"
+                     [ngClass]="row !== null ? theme+'-dark':''"
+                     (change)="selectOrUnselectItem(row)"
+                     [(ngModel)]="row.checked">
+        </md-checkbox>
+      </td>
+      <td *ngFor="let column of columns; let i=index" [ngStyle]="{'width': column.columnWidth}"
+          [ngSwitch]="column.fieldType"
+          [ngClass]="row !== null ? 'td-align-text-' + column.textAlign:''">
+        <span *ngSwitchCase="1" [id]="column.field + '_' + j">{{row[column.field]}}</span>
+        <span *ngSwitchCase="2" [id]="column.subField + '_' + j">{{row[column.field] | myDisplayNullPipe: column.subField}}</span>
+        <span *ngSwitchCase="3" [id]="column.subSubField + '_' + j">{{row[column.field][column.subField] | myDisplayNullPipe: column.subSubField }}</span>
+        <span *ngSwitchCase="4" [id]="column.subSubSubField + '_' + j">{{row[column.field][column.subField][column.subSubField] | myDisplayNullPipe: column.subSubSubField  }}</span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

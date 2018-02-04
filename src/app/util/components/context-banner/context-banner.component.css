@@ -1,0 +1,27 @@
+.banner {
+  position: fixed;
+  background:linear-gradient(60deg, #6b1b6d, #a74fa1);
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 10px;
+  color:white;
+  border-radius: 0px 3px 3px 0px;
+  z-index:200;
+}
+
+.movie {
+  position: relative;
+  top: 3px;
+  font-size: 18px;
+  cursor:pointer;
+}
+
+.hide {
+  top: 70px !important;
+  transition: 0.3s;
+}
+
+.show {
+  top: 130px !important;
+  transition: 0.3s;
+}

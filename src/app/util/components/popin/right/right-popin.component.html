@@ -1,0 +1,6 @@
+<div (click)="isPopinDeployed = false"
+  [ngClass]="{blackshield:isPopinDeployed }">
+</div>
+<div [ngClass]="{extend:isPopinDeployed, retract:!isPopinDeployed }" class="right-popin-container">
+  <ng-content></ng-content>
+</div>

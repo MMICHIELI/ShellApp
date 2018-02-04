@@ -1,0 +1,18 @@
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+
+<mmi-header
+  [theme]="theme"
+  (toggleMenu)="toggleMenu()">
+</mmi-header>
+
+<mmi-menu
+  [isMenuDeployed]="isMenuDeployed"
+  (toggleMenu)="retractMenu()"
+  [theme]="theme">
+</mmi-menu>
+
+<div class="app-container" [ngClass]="{extend:!isMenuDeployed,reduce:isMenuDeployed}">
+
+  <router-outlet></router-outlet>
+
+</div>

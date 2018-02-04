@@ -1,0 +1,224 @@
+.nav-container {
+  background: #212121;
+  color: white;
+}
+
+/*
+  MENU
+*/
+.nav-show {
+  top:0;
+  transition: 0.3s;
+}
+
+.nav-hide {
+  top:-44px !important;
+  transition: 0.3s;
+}
+
+nav {
+  position: fixed;
+  z-index: 100000;
+  top:0;
+  background: white;
+  line-height: 38px;
+  width:100%;
+  height: 39px;
+  white-space: nowrap;
+  background: #212121;
+  color:white;
+  transition: 0.3s;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.menu-toggle {
+  line-height: 38px;
+  color: white;
+  cursor: pointer;
+}
+
+a {
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+}
+
+.first-item {
+  padding-left:20px;
+}
+
+.item {
+  position:relative;
+  display: inline-block;
+  margin-left: 5px;
+  height: 100%;
+}
+
+/*
+  LOGO UNITY
+*/
+#logo-unity{
+  position: absolute;
+  float:left;
+  left: 5px;
+  top: -8px;
+  width:80px;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.logo-hide {
+  top: -38px !important;
+  transition: 0.3s;
+}
+
+#app-name {
+  font-weight: bold;
+  color: white;
+  margin-left: 48px;
+  letter-spacing: 1px;
+  z-index: 10000;
+  transition: 0.5s;
+}
+
+#app-name:hover {
+  color: white;
+}
+
+/*
+  DOMAIN SELECT
+*/
+#domain-selector {
+  position: relative;
+  border: none;
+  background-color: #4C4B4B;
+  color: #A6A6A6;
+  padding: 9px 0px 6px 5px;
+}
+
+#domain-selector:focus {
+  outline: 0;
+}
+
+/*
+  SEPARATOR
+*/
+#separator {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 1px;
+    background: #212121;
+}
+
+/*
+  SEARCH INPUT
+*/
+#search-container {
+  position: relative;
+  background-color: #4C4B4B;
+  color: #A6A6A6;
+  padding: 5px;
+  margin-left: 30px;
+  transition: 0.5s;
+}
+
+#search-icon {
+  vertical-align: middle;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+
+#primary-search {
+  position: relative;
+  border: none;
+  color: white !important;
+  background-color: transparent;
+  width: 450px;
+  transition: 0.5s;
+}
+
+#primary-search:focus {
+  outline: 0;
+}
+
+#advance-search {
+  font-size: 12px;
+}
+
+#advance-search:hover {
+  color: white;
+}
+
+#profil {
+  position: absolute;
+  float: right;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background-image: url('./../../../../assets/img/persona.png');
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+@media screen and (max-width: 640px) {
+  #profil{
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  nav {
+    height: inherit;
+  }
+  #search-container{
+    margin-left: 80px;
+  }
+  #primary-search {
+    width:150px;
+  }
+  #app-name {
+    display: none;
+  }
+  #logo-unity {
+    position: absolute;
+    float:left;
+    top:-33px;
+    left:0;
+  }
+
+}
+@media screen and (max-width: 950px) {
+  #primary-search {
+    width:200px
+  }
+}
+
+/*
+  HIDE/SHOW class
+*/
+.nav-up {
+  top: -40px;
+}
+
+.env {
+  color: white;
+  font-size: 10px;
+  border-radius: 1px;
+  padding:1px 4px 1px 4px;
+  margin-left: 10px;
+}
+
+#env-local {
+  background-color: #868e96;
+}
+
+#env-uat {
+  background-color: #ffc000;
+}
+
+#env-dev {
+  background-color: #007bff;
+}

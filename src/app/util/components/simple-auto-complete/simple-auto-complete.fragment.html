@@ -1,0 +1,10 @@
+<md-input-container>
+  <input mdInput [mdAutocomplete]="auto" [(ngModel)]="model" (focus)="getList()"
+         [formControl]="control">
+</md-input-container>
+
+<md-autocomplete #auto="mdAutocomplete" >
+  <md-option *ngFor="let item of filteredList | async" [value]="item[fieldToSave]">
+    {{item[fieldToDisplay]}}
+  </md-option>
+</md-autocomplete>

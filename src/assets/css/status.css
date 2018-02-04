@@ -1,0 +1,15 @@
+.BROUILLON {
+  color: #3498db;
+}
+
+.PARTIELLEMENT.VALIDE {
+  color: #f39c12;
+}
+
+.VALIDE {
+  color: #2ecc71;
+}
+
+.ANNULE {
+  color: #e74c3c;
+}

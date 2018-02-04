@@ -1,0 +1,168 @@
+.actions-container{
+  position: fixed;
+  bottom: 0px;
+  right:0px;
+  padding-right:5px;
+  z-index: 100;
+}
+
+.actions-list{
+  display: block !important;
+  margin-bottom:16px;
+  list-style: none;
+}
+
+.action {
+  bottom:0;
+  margin-top:10px;
+  position: relative;
+  text-align: center !important;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.on-hover {
+  opacity: 0.3;
+  transition: 0.3s;
+}
+
+.active-action {
+  background: #EEE !important;
+  color: black !important;
+  transition: 0.5s;
+}
+
+/* Action Button */
+.action > i {
+  font-size:16pt;
+  border-radius:50%;
+  margin-right: 0 !important;
+  background:#EEE;
+}
+
+.action > i:active {
+  color: #363636;
+  background:#EEE !important;
+}
+
+
+.action > .fa {
+  padding:15px;
+  color:white;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+
+.animate {
+  transform: translateX(150%);
+}
+
+.show {
+  transform: translateX(0) !important;
+}
+
+/* Action item button */
+.action-item {
+  bottom:0;
+  margin-top:10px;
+  position: relative;
+  text-align: center !important;
+  cursor: pointer;
+}
+
+.action-item > i {
+  font-size:13pt;
+  border-radius:50%;
+  margin-right: 0 !important;
+  background:#EEE;
+}
+
+.action-item > i:active {
+  color: #363636;
+  background:#EEE !important;
+}
+
+.action-item > .fa {
+  padding:15px;
+  color:white;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+
+.toggle-container{
+  display: block;
+  margin-right:25px;
+  width:100%;
+  text-align: center;
+}
+
+.actions-toggle{
+  padding:20px;
+  color: white !important;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  border-radius: 50%;
+  transition:0.5s;
+  cursor: pointer;
+}
+
+.actions-toggle-not-hover{
+  background: #D23F31;
+}
+.actions-toggle-hover{
+  color: #474747 !important;
+  background: #EEE;
+}
+
+.success{
+  background: #5CB85C !important;
+}
+.success:hover{
+  background: #449d44 !important;
+}
+
+.warning{
+  background: #F0AD4E !important;
+}
+.warning:hover{
+  background: #ec971f !important;
+}
+
+.primary{
+  background:#2A3F54 !important;
+}
+.primary:hover{
+  background: #ec971f !important;
+}
+
+.purple{
+  background: #8e41a2 !important;
+}
+.purple:hover{
+  background: #8E41A2 !important;
+}
+
+.red{
+  background: #D9534F !important;
+}
+.red:hover{
+  background: #D9534F !important;
+}
+
+.white{
+  background: white !important;
+  color:black !important;
+}
+
+.white:hover{
+  background: lightgray !important;
+}
+
+.interaction{
+  background: #54a9ff !important;
+}
+
+.dark-blue {
+  background: #3566a7 !important;
+}
+
+.dark-blue:hover {
+  background: #3566a7 !important;
+}

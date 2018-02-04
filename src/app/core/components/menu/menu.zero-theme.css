@@ -1,0 +1,36 @@
+/**
+* ZERO THEME
+*/
+.zero-theme-app-menu{
+  background: #2F2F2F;
+  color:white;
+}
+
+#zero-theme-links{
+  margin:0;
+  width:100%;
+  list-style: none;
+}
+
+#zero-theme-links > li{
+  padding:15px;
+  padding-left:25px;
+  margin-left:0;
+}
+
+#zero-theme-links > li:hover{
+  cursor:pointer;
+  background: #2c2e3f;
+}
+
+.zero-theme:hover{
+  border-right:6px solid #4682dc;
+  transition:0.2s;
+}
+
+.zero-theme-active-link{
+  background: rgb(46, 50, 78);
+  color:white;
+  border-right:6px solid #2384dc;
+  transition:0.2s;
+}

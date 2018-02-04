@@ -1,0 +1,37 @@
+<div class="nav-container">
+  <nav [ngClass]="{'nav-hide':isHide}">
+    <a class="item first-item" (click)="emitToggleMenuEvent()">
+      <i class="material-icons menu-toggle">menu</i>
+    </a>
+
+    <span class="item clickable">
+        <span><img id="logo-unity" src="/assets/img/*" [ngClass]="{'logo-hide':isHide}"
+                   alt="logo"></span>
+        <span id="app-name">Shell App</span>
+        <span *ngIf="env === 'local'" id="env-{{env}}" class="env">{{env}}</span>
+        <span *ngIf="env === 'development'" id="env-dev" class="env">dev</span>
+        <span *ngIf="env === 'uat'" id="env-{{env}}" class="env">{{env}}</span>
+      </span>
+
+    <span id="search-container">
+        <select id="domain-selector" [(ngModel)]="searchType">
+          <option value=1>{{'GLOBAL_SEARCH.#1' | translate }}</option>
+          <option value=2>{{'GLOBAL_SEARCH.#2' | translate }}</option>
+          <option value=3>{{'GLOBAL_SEARCH.#3' | translate }}</option>
+          <option value=4>{{'GLOBAL_SEARCH.#4' | translate }}</option>
+          <option value=5>{{'GLOBAL_SEARCH.#5' | translate }}</option>
+        </select>
+        <span id="separator"></span>
+        <i id="search-icon" class="material-icons" (click)="search()" style="cursor: pointer">search</i>
+        <input id="primary-search" placeholder="{{'GLOBAL_SEARCH.PLACEHOLDER' | translate }}" [(ngModel)]="inputText">
+      </span>
+
+    <a id="advance-search" class="item clickable">
+      {{'GLOBAL_SEARCH.LINK_ADVANCED_SEARCH' | translate }}
+    </a>
+
+    <a id="profil" class="item last">
+
+    </a>
+  </nav>
+</div>

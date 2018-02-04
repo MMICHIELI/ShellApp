@@ -1,0 +1,184 @@
+<div style="display:inline-block; border-bottom: solid 1px rgba(255, 255, 255, 0.3);">
+  <i id="removeItem"
+     *ngIf="tableActionButtons.displayDeleteButton"
+     class="material-icons md-light md-action-button {{theme}}-block-title"
+     (click)="removeItem()"
+     pTooltip="Supprimer"
+     tooltipPosition="top"
+     tooltipStyleClass="test">delete</i>
+  <md-divider
+    *ngIf="tableActionButtons.displayDuplicateButton"
+    class="vertical-divider {{theme}}-divider-color"></md-divider>
+  <i
+    *ngIf="tableActionButtons.displayDuplicateButton"
+    id="duplicateItem"
+    class="material-icons md-light md-action-button {{theme}}-block-title"
+    (click)="removeItem()"
+    pTooltip="Dupliquer"
+    tooltipPosition="top"
+    tooltipStyleClass="test">content_copy</i>
+  <md-divider
+    *ngIf="tableActionButtons.displaySearchButton"
+    class="vertical-divider {{theme}}-divider-color"></md-divider>
+  <i
+    *ngIf="tableActionButtons.displaySearchButton"
+    id="searchItem"
+    class="material-icons md-light md-action-button {{theme}}-block-title"
+    (click)="onSearchClick()"
+    pTooltip="Rechercher"
+    tooltipPosition="top"
+    tooltipStyleClass="test">search</i>
+</div>
+<div>
+  <table style="margin-left:-1px; border-spacing: 0;">
+    <thead>
+    <tr style="height:35px" class="headers">
+
+      <th *ngIf="withCheckBoxes" class="checkBox-column {{theme}}-block-title"
+          style="width:40px;">
+        <md-checkbox
+          id="check-all"
+          [ngClass]="rows !== null ? theme+'-light':''"
+          (change)="selectAllItem()"
+          [(ngModel)]="selectAllItems">
+        </md-checkbox>
+      </th>
+      <th *ngFor="let column of columns" class="{{theme}}-block-title" mandatory="true"
+          [ngStyle]="{'width': column.columnWidth}">
+        {{column.label | translate}}<span *ngIf="column.isMandatory"
+                                          style="color: white; font-weight: normal"> *</span>
+      </th>
+
+      <th class="{{theme}}-block-title add-column" (click)="onAddClick()" *ngIf="tableActionButtons.displayAddButton">
+        <i id="addButton" class="material-icons add-icon">add</i>
+      </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of rows; let i = index"
+        style="height:51px;"
+        [ngClass]="newlyAdded[i]==true ? theme+'-new-row':''">
+
+      <td *ngIf="withCheckBoxes" style="display:inline-block; width:40px; margin-top:6px; padding-left:9px">
+        <md-checkbox id="{{'checkbox' + i}}"
+                     [ngClass]="row !== null ? theme+'-dark':''"
+                     (change)="selectOrUnselectItem(row)"
+                     [(ngModel)]="row.checked">
+        </md-checkbox>
+      </td>
+      <td *ngFor="let column of columns" [ngSwitch]="column.inputType" [ngStyle]="{'width': column.columnWidth}"
+
+          [ngClass]="row !== null ? 'paddingTd-'+column.inputType:''">
+        <md-input-container *ngSwitchCase="1">
+          <input mdInput
+                 id="{{prefix + '-' + column.name + i}}"
+                 #inputText
+                 maxlength="{{column.maxLength}}"
+                 [(ngModel)]="row[column.name]"
+                 [formControl]="formGroup.get(prefix + '-' + column.name + i)">
+          <md-hint align="end" *ngIf="column.maxLength">{{inputText.value.length}} / {{column.maxLength}}</md-hint>
+          <md-hint align="start" *ngIf="column.pattern">{{column.pattern}}</md-hint>
+        </md-input-container>
+        <md-input-container *ngSwitchCase="2" align="right">
+          <input mdInput
+                 id="{{'inputNumber' + ' ' + prefix + '-' + column.name + i}}"
+                 type="number"
+                 myNumberFormatter
+                 decimalNumber="{{column.decimalNumber}}"
+                 class="md-input-number"
+                 [(ngModel)]="row[column.name]"
+                 (blur)="onUpdateValue($event, i, column.name)"
+                 [formControl]="formGroup.get(prefix + '-' + column.name + i)">
+        </md-input-container>
+
+        <div *ngSwitchCase="3">
+          <md-input-container>
+            <input mdInput
+                   id="startDate"
+                   [mdDatepicker]="picker"
+                   [(ngModel)]="row[column.name]"
+                   [formControl]="formGroup.get(prefix + '-' + column.name + i)">
+            <button mdSuffix [mdDatepickerToggle]="picker"></button>
+          </md-input-container>
+          <md-datepicker #picker ></md-datepicker>
+        </div>
+        <md-select *ngSwitchCase="6"
+                   [(ngModel)]="row[column.name].id"
+                   [formControl]="formGroup.get(prefix + '-' + column.name + i)">
+          <md-option *ngFor="let value of column.selectValues" [value]="value.id">
+            {{value[column.fieldToDisplay]}}
+          </md-option>
+        </md-select>
+        <mmi-auto-complete-component *ngSwitchCase="5"
+                                    [control]="formGroup.get(prefix + '-' + column.name + i)"
+                                    [fieldToDisplay]="column.fieldToDisplay"
+                                    [suggestions]="column.suggestions"
+                                    [model]="row[column.name]"
+                                    [debounceDelay]="500"
+                                    (autoCompleteGenericEmitter)="search($event, column)"
+                                    (autoCompleteOnSelectGenericEmitter)="onSelect($event, i, column)">
+        </mmi-auto-complete-component>
+
+        <select *ngSwitchCase="7" [(ngModel)]="row[column.name]"
+                [formControl]="formGroup.get(prefix + '-' + column.name + i)"
+                [ngClass]="{'has-error': formGroup.get(prefix + '-' + column.name + i).status === 'INVALID' && formGroup.get(prefix + '-' + column.name + i).touched}">
+        </select>
+
+        <md-checkbox id="{{'checkboxInput' + i}}" class="test"
+                     *ngSwitchCase="8"
+                     [ngClass]="row !== null ? theme+'-dark':''"
+                     [(ngModel)]="row[column.name]"
+                     (change)="onCheckBoxClick($event, i, column.name)">
+        </md-checkbox>
+
+        <md-select *ngSwitchCase="9"
+                   [(ngModel)]="row[column.name]"
+                   [formControl]="formGroup.get(prefix + '-' + column.name + i)">
+          <md-option *ngFor="let value of column.selectValues" [value]="value.id">
+            {{value[column.fieldToDisplay]}}
+          </md-option>
+        </md-select>
+
+        <span *ngSwitchCase="4">{{row[column.name]}}</span>
+        <span *ngSwitchCase="10">{{row[column.name] | myDisplayNullPipe:column.objectField}}</span>
+        <span *ngSwitchCase="11">{{row[column.name][column.subObject] | myDisplayNullPipe:column.objectField}}</span>
+        <span *ngSwitchCase="12">{{row[column.name][column.subObject][column.subSubObject] | myDisplayNullPipe:column.objectField}}</span>
+
+        <mmi-auto-complete-component *ngSwitchCase="13"
+                                    [control]="formGroup.get(prefix + '-' + column.name + i)"
+                                    [fieldToDisplay]="column.name"
+                                    [suggestions]="column.suggestions"
+                                    [debounceDelay]="500"
+                                    [model]="row[column.subObject][column.name]"
+                                    (autoCompleteGenericEmitter)="search($event, column)"
+                                    (autoCompleteOnSelectGenericEmitter)="onSelect($event, i, column)">
+        </mmi-auto-complete-component>
+
+        <div>
+          <md-input-container *ngSwitchCase="14">
+            <input mdInput [mdAutocomplete]="auto" [(ngModel)]="row[column.name]"
+                   (focus)="getListForSimpleAuto(i, column)"
+                   [formControl]="formGroup.get(prefix + '-' + column.name + i)">
+          </md-input-container>
+
+
+          <div *ngSwitchCase="15" align="center">
+            <i style="cursor:pointer;"
+               class="material-icons md-light md-action-button {{theme}}-block-title"
+               (click)="onActionIconClick(i)"
+               pTooltip="{{getIconTooltip()}}"
+               tooltipPosition="top">{{getIconName()}}</i>
+          </div>
+
+          <md-autocomplete #auto="mdAutocomplete">
+            <md-option *ngFor="let item of column.filteredList | async" [value]="item[column.fieldToSave]">
+              {{item[column.fieldToDisplay]}}
+            </md-option>
+          </md-autocomplete>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,36 @@
+/**
+* DARK THEME
+*/
+.sand-theme-app-menu{
+  background: #2F2F2F;
+  color:white;
+}
+
+#sand-theme-links{
+  margin:0;
+  width:100%;
+  list-style: none;
+}
+
+#sand-theme-links > li{
+  padding:15px;
+  padding-left:25px;
+  margin-left:0;
+}
+
+#sand-theme-links > li:hover{
+  cursor:pointer;
+  background: #2c2e3f;
+}
+
+.sand-theme:hover{
+  border-right:6px solid #f0ad4e;
+  transition:0.2s;
+}
+
+.sand-theme-active-link{
+  background: rgb(46, 50, 78);
+  color:white;
+  border-right:6px solid #f0ad4e;
+  transition:0.2s;
+}

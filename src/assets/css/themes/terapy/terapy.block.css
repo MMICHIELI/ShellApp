@@ -1,0 +1,302 @@
+/**
+GENERAL
+ */
+.terapy {
+  background: #65D39B;
+}
+
+.terapy-color {
+  color: #65D39B;
+}
+
+.terapy-section {
+  padding: 15px;
+  background: #d2eade;
+}
+
+.terapy-block-title {
+  background: #65D39B !important;
+  color: white;
+  transition: 0.3s;
+}
+
+.table th {
+  background: #65D39B !important;
+  color: white;
+  border: 1px white solid !important;
+}
+
+.table th span {
+  color: white;
+}
+
+.table td {
+  border: none !important;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #efefef;
+}
+
+.table tbody tr:nth-child(odd) {
+  background: white;
+}
+
+
+/**
+SIMPLE CONSULTATION TAB
+ */
+.table-consult tr:hover {
+  background: #c5eae0 !important;
+}
+
+.table-consult tbody tr:nth-child(even) {
+  background-color: #efefef;
+}
+
+.table-consult tbody tr:nth-child(odd) {
+  background: white;
+}
+
+.terapy-arrow-down {
+  border-top: 10px solid #65D39B;
+  transition: 0.3s;
+}
+
+.terapy-block-title-secondary {
+  background: #668db5;
+  transition: 0.3s;
+}
+
+.terapy-arrow-down-secondary {
+  border-top: 10px solid #668db5;
+  transition: 0.3s;
+}
+
+.terapy-plain-block {
+  background-color: rgb(46, 50, 78);
+  color: white !important;
+  border-radius: 5px;
+}
+
+.terapy-plain-block label {
+  color: #d8d8d8;
+}
+
+.terapy-label-code {
+  background-color: #2cd6cd;
+  opacity: 0.50;
+}
+
+.terapy-territory {
+  color: #1ac39b !important;
+}
+
+.terapy-divider-color {
+  border-right-color: #436f99 !important;
+}
+
+.terapy-new-row {
+  background: #c5eae0 !important;
+  border-bottom: 1px solid #fefefe;
+}
+
+.table tr:hover {
+  background: #c5eae0 !important;
+}
+
+.terapy-divider-color {
+  border-right-color: #13b293 !important;
+}
+
+/**
+CHECKBOX
+ */
+.terapy-light .mat-checkbox-frame {
+  border-color: white !important;
+}
+
+.terapy-dark .mat-checkbox-frame {
+  border-color: rgba(0, 0, 0, .54) !important;
+}
+
+.terapy-light .mat-checkbox-checkmark-path {
+  stroke: #65D39B !important;
+}
+
+.terapy-dark .mat-checkbox-checkmark-path {
+  stroke: #fafafa !important;
+}
+
+.terapy-dark.mat-checkbox-checked.mat-accent .mat-checkbox-background, .terapy-dark.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #65D39B !important;
+}
+
+.terapy-light.mat-checkbox-checked.mat-accent .mat-checkbox-background, .terapy-light.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: white !important;
+}
+
+.terapy-dark.mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  background-color: rgba(26, 195, 155, .20) !important;
+}
+
+.terapy-dark.mat-checkbox:not(.mat-checkbox-disabled).mat-warn .mat-checkbox-ripple .mat-ripple-element {
+  background-color: rgba(26, 195, 155, .20) !important;
+}
+
+.terapy-light.mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  background-color: rgba(255, 255, 255, .20) !important;
+}
+
+.terapy-light.mat-checkbox:not(.mat-checkbox-disabled).mat-warn .mat-checkbox-ripple .mat-ripple-element {
+  background-color: rgba(255, 255, 255, .20) !important;
+}
+
+/**
+DRAGGED ITEM
+ */
+.terapy-tr-dragged {
+  border: 2px dashed #65D39B !important;
+  background-color: #e0e0e0 !important;
+}
+
+/**
+ INPUT
+ */
+/*.mat-input-underline .mat-input-ripple {*/
+/*background-color: #65D39B !important;*/
+/*}*/
+
+/**
+ INPUT TYPE SELECT
+ */
+.mat-option.mat-selected {
+  color: #65D39B !important;
+}
+
+.mat-select:focus:not(.mat-select-disabled) .mat-select-underline {
+  background-color: #65D39B !important;
+}
+
+.mat-select:focus:not(.mat-select-disabled) .mat-select-arrow {
+  color: #65D39B !important;
+}
+
+.mat-option.mat-selected.mat-primary, .mat-primary .mat-option.mat-selected {
+  color: #65D39B !important;
+}
+
+/**
+RADIO BUTTON
+ */
+.terapy-radio-button .mat-radio-checked .mat-radio-outer-circle {
+  border-color: #65D39B;
+}
+
+.terapy-radio-button .mat-radio-outer-circle {
+  transition: border-color cubic-bezier(0.7, -0.46, 1, 1) 180ms;
+}
+
+.terapy-radio-button .mat-radio-inner-circle {
+  background-color: #65D39B;
+  transition: transform cubic-bezier(0.7, -0.46, 1, 1) 180ms, background-color cubic-bezier(0.7, -0.46, 1, 1) 330ms;
+}
+
+.terapy-radio-button .mat-ripple-element {
+  background-color: rgba(101, 211, 155, .20);
+  transition: transform cubic-bezier(0.7, -0.46, 1, 1) 330ms;
+}
+
+/**
+SELECT / MULTISELECT
+ */
+.mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-arrow, .mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-trigger {
+  color: #65D39B !important;
+}
+
+.mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-underline {
+  background-color: #65D39B
+}
+
+.mat-pseudo-checkbox-checked {
+  background-color: #65D39B;
+  color: white !important;
+}
+
+.mat-select:focus:not(.mat-select-disabled).mat-accent .mat-select-arrow, .mat-select:focus:not(.mat-select-disabled).mat-accent .mat-select-trigger {
+  color: #65D39B !important;
+}
+
+.mat-select:focus:not(.mat-select-disabled).mat-accent .mat-select-underline {
+  background-color: #65D39B !important;
+}
+
+.mat-select:focus:not(.mat-select-disabled).mat-warn .mat-select-arrow, .mat-select:focus:not(.mat-select-disabled).mat-warn .mat-select-trigger, .mat-select:not(:focus).ng-invalid.ng-touched:not(.mat-select-disabled) .mat-select-arrow, .mat-select:not(:focus).ng-invalid.ng-touched:not(.mat-select-disabled) .mat-select-trigger {
+  color: #65D39B !important;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked, .mat-primary .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked.mat-primary, .mat-pseudo-checkbox-indeterminate.mat-primary {
+  background-color: #65D39B !important;
+}
+
+/**
+CALENDAR
+ */
+.mat-calendar-body-selected {
+  background-color: #65D39B !important;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+  background-color: white !important;
+  color: #65D39B !important;
+}
+
+/**
+BLOCK BACKGROUND
+ */
+.terapy-background-1 {
+  background-color: #F1F3F4;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.terapy-background-2 {
+  background-color: #e6e6e6;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.terapy-background-3 {
+  background-color: #c5eae0 !important;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.terapy-background-4 {
+  background-color: #e1f1e7;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+/**
+HEADER MENU
+ */
+.mat-tab-links :hover {
+  color: #65D39B !important;
+}
+
+.mat-ink-bar {
+  border-bottom: 3px solid #65D39B !important;
+  color: #65D39B !important;
+}
+
+.mat-tab-link-selected {
+  color: #65D39B !important;
+}
+
+
+.terapy-mat-ink-bar .mat-ink-bar {
+  background-color: : #65D39B !important;
+}
+
+.terapy-mat-tab-links:hover {
+  color: white !important;
+}

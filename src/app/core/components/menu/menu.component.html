@@ -1,0 +1,14 @@
+
+<div class="app-menu {{theme}}-theme-app-menu" >
+  <div [ngClass]="{'extend':isMenuDeployed, 'reduce':!isMenuDeployed}">
+    <ul id="{{theme}}-theme-links">
+      <li class="{{theme}}-theme" routerLink="dashboard" routerLinkActive="{{theme}}-theme-active-link">{{ 'MENU.DASHBOARD' | translate }}</li>
+      <li class="{{theme}}-theme" routerLink="module1" routerLinkActive="{{theme}}-theme-active-link">{{ 'MENU.MODULE1' | translate }}</li>
+      <li class="{{theme}}-theme" routerLink="module2" routerLinkActive="{{theme}}-theme-active-link">{{ 'MENU.MODULE2' | translate }}</li>
+    </ul>
+   </div>
+ </div>
+
+ <div class="blackout" [ngClass]="{'blackout-extend':isMenuDeployed, 'blackout-reduce':!isMenuDeployed}">
+
+ </div>

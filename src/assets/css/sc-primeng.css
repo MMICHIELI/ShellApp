@@ -1,0 +1,152 @@
+/*.ui-paginator-rpp-options {
+  width: inherit;
+}
+
+.ui-datatable th {
+  background: #2e324e !important;
+  color: white !important;
+  border: 1px solid black !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  font-weight: normal;
+}
+
+.ui-datatable td {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  font-size: 0.9rem;
+}
+
+.ui-datatable tr {
+  cursor: pointer;
+}
+
+.ui-state-active {
+  background: #2e324e !important;
+}
+
+.ui-sortable-column.ui-state-active {
+  background: rgb(44, 110, 169) !important;
+  color: white !important;
+  border: none;
+}
+
+.ui-paginator {
+  background: transparent !important;
+  border: none
+}
+
+.ui-widget-header {
+  border: none !important;
+}
+
+.ui-paginator-element .fa {
+  color: #54576b !important;
+}
+
+.ui-paginator-page {
+  color: black !important;
+}
+
+.ui-paginator-page.ui-state-active {
+  color: white !important;
+}
+
+.ui-autocomplete {
+  width: 100% !important;
+}
+
+.ui-calendar {
+  position: relative;
+  display: inline-block;
+  width: 100%
+}
+
+body .ui-selectbutton.ui-buttonset .ui-button {
+  background-color: #2c6ea9;
+  border-color: #cccccc;
+  color: white;
+}
+
+body .ui-selectbutton.ui-buttonset .ui-button.ui-state-hover {
+  background-color: #2c6ea9;
+}
+
+/*
+  AUTO COMPLETE
+
+body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container {
+  margin-top: 6px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  vertical-align: middle;
+}
+
+.ui-autocomplete-input-token {
+  padding: 0 !important;
+  width: 100%;
+}
+
+.ui-autocomplete-token {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  display: block !important;
+}
+
+.ui-button {
+  color: white !important;
+  background: #54a9ff !important;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  margin-right: 0;
+  border-color: transparent !important;
+}
+
+.ui-state-active {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.ui-widget-content:hover > td {
+  color: #3793d4 !important;
+}
+
+.ui-autocomplete-dropdown {
+  height: 41px !important;
+}
+
+body .ui-accordion .ui-accordion-header.ui-state-active {
+  background-color: white !important;
+  color: black !important;
+  border-radius: 0;
+}
+
+.ui-accordion-header {
+  margin-top: 0 !important;
+  border-radius: 0px;
+}
+
+body .ui-accordion .ui-accordion-header.ui-state-active a {
+  color: black !important;
+}
+
+.ui-corner-all {
+  border-radius: 0px !important;
+}
+
+.ui-dialog {
+  position: fixed;
+  padding: 0;
+  overflow: visible !important;
+}
+
+.ui-dialog .ui-dialog-content {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+p-calendar input {
+  width: 110px;
+}
+*/

@@ -1,0 +1,36 @@
+/**
+* DARK THEME
+*/
+.terapy-theme-app-menu{
+  background: #2F2F2F;
+  color:white;
+}
+
+#terapy-theme-links{
+  margin:0;
+  width:100%;
+  list-style: none;
+}
+
+#terapy-theme-links > li{
+  padding:15px;
+  padding-left:25px;
+  margin-left:0;
+}
+
+#terapy-theme-links > li:hover{
+  cursor:pointer;
+  background: #212121;
+}
+
+.terapy-theme:hover {
+  border-right:6px solid #65D39B;
+  transition:0.2s;
+}
+
+.terapy-theme-active-link{
+  background: #212121;
+  color:white;
+  border-right:6px solid #65D39B;
+  transition:0.2s;
+}

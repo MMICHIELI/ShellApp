@@ -1,0 +1,166 @@
+.wave {
+  background: #218FB0;
+}
+
+.wave-section {
+  padding: 15px;
+  background: #c8dfe6;
+}
+
+.wave-block-title {
+  /*background: #668db5 !important;*/
+  background: #668db5 !important; /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, #1F699E, #218FB0);  /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to right, #1F699E, #218FB0);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  transition: 0.3s;
+}
+
+.wave-arrow-down {
+  border-top: 10px solid #668db5;
+  transition: 0.3s;
+}
+
+.wave-block-title-secondary {
+  background: #668db5;
+  transition: 0.3s;
+}
+
+.wave-arrow-down-secondary {
+  border-top: 10px solid #668db5;
+  transition: 0.3s;
+}
+
+.wave-plain-block {
+  background-color: rgb(46, 50, 78);
+  color: white !important;
+  border-radius: 5px;
+}
+
+.wave-plain-block label {
+  color: #d8d8d8;
+}
+
+.wave-label-code {
+  background-color: #81abd4;
+  opacity: 0.50;
+}
+
+.wave-divider-color {
+  border-right-color: #436f99 !important;
+}
+
+.wave-new-row {
+  background: #b3cde0 !important;
+  border-bottom: 1px solid #fefefe;
+}
+
+.wave-light .mat-checkbox-frame {
+  border-color: white !important;
+}
+
+.wave-dark .mat-checkbox-frame {
+  border-color: rgba(0, 0, 0, .54) !important;
+}
+
+.wave-light .mat-checkbox-checkmark-path {
+  stroke: #668db5 !important;
+}
+
+.wave-dark .mat-checkbox-checkmark-path {
+  stroke: #fafafa !important;
+}
+
+.wave-dark.mat-checkbox-checked.mat-accent .mat-checkbox-background, .wave-dark.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #668db5 !important;
+}
+
+.wave-light.mat-checkbox-checked.mat-accent .mat-checkbox-background, .wave-light.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: white !important;
+}
+
+.wave-dark.mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #436f99;
+  opacity: 0.15;
+}
+
+.wave-dark.mat-checkbox:not(.mat-checkbox-disabled).mat-warn .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #436f99;
+  opacity: 0.15;
+}
+
+.wave-light.mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  background-color: rgba(255, 255, 255, .20) !important;
+}
+
+.wave-light.mat-checkbox:not(.mat-checkbox-disabled).mat-warn .mat-checkbox-ripple .mat-ripple-element {
+  background-color: rgba(255, 255, 255, .20) !important;
+}
+
+.mat-input-underline .mat-input-ripple {
+  background-color: #668db5;
+}
+
+.wave.mat-option.mat-selected {
+  color: #668db5;
+}
+
+.wave.mat-select:focus:not(.mat-select-disabled) .mat-select-underline {
+  background-color: #668db5;
+}
+
+.wave.mat-select:focus:not(.mat-select-disabled) .mat-select-arrow {
+  color: #668db5;
+}
+
+.wave.wave-tr-dragged {
+  border: 2px dashed #668db5 !important;
+  background-color: #e0e0e0 !important;
+}
+
+.wave-radio-button .mat-radio-checked .mat-radio-outer-circle {
+  border-color: #668db5;
+}
+
+.wave-radio-button .mat-radio-outer-circle {
+  transition: border-color cubic-bezier(0.7, -0.46, 1, 1) 180ms;
+}
+
+.wave-radio-button .mat-radio-inner-circle {
+  background-color: #668db5;
+  transition: transform cubic-bezier(0.7, -0.46, 1, 1) 180ms, background-color cubic-bezier(0.7, -0.46, 1, 1) 330ms;
+}
+
+.wave-radio-button .mat-ripple-element {
+  background-color: rgba(102, 141, 181, .2);
+  transition: transform cubic-bezier(0.7, -0.46, 1, 1) 330ms;
+}
+/*.mat-input-underline .mat-input-ripple {*/
+  /*background-color: #668db5;*/
+/*}*/
+
+/*.wave.mat-option.mat-selected {*/
+  /*color: #668db5;*/
+/*}*/
+
+/*.wave.mat-select:focus:not(.mat-select-disabled) .mat-select-underline {*/
+  /*background-color: #668db5;*/
+/*}*/
+
+/*.wave.mat-select:focus:not(.mat-select-disabled) .mat-select-arrow {*/
+  /*color: #668db5;*/
+/*}*/
+
+/*.wave.wave-tr-dragged {*/
+  /*border: 2px dashed #668db5 !important;*/
+  /*background-color: #e0e0e0 !important;*/
+/*}*/
+
+
+.wave-mat-ink-bar .mat-ink-bar {
+  background-color: #218FB0 !important
+}
+
+.wave-mat-tab-links:hover {
+  color: white !important;
+}

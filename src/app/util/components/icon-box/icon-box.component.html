@@ -1,0 +1,9 @@
+<div class="icon-box shadow" [ngStyle]="getBoxStyle()">
+  <div class="left-box" *ngIf="materialIcon">
+    <i class="material-icons icon" [ngStyle]="getIconColor()">{{materialIcon}}</i>
+  </div>
+  <div class="right-box">
+    <div class="label" [ngStyle]="getLabelColor()">{{label}}</div>
+    <div class="value" [ngStyle]="getValueColor()">{{value}}</div>
+  </div>
+</div>

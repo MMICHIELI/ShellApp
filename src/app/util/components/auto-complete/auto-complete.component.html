@@ -1,0 +1,18 @@
+<md-input-container [ngStyle]="{'width': width}">
+  <input mdInput #autoCompleteInputField
+         placeholder="{{placeholder}}"
+         [mdAutocomplete]="auto"
+         [(ngModel)]="model"
+         [formControl]="control"
+         (input)="search($event)">
+</md-input-container>
+
+<md-autocomplete #auto="mdAutocomplete">
+  <md-option *ngFor="let suggestion of suggestions"
+             [value]="suggestion[fieldToDisplay]"
+             (onSelectionChange)="onSelect(suggestion)"
+             [ngClass]="{'highlight-option': suggestion.highlight, 'sub-option': !suggestion.highlight && ordered}"
+             [disabled]="suggestion.disabled">
+    {{suggestion[fieldToDisplay]}}
+  </md-option>
+</md-autocomplete>

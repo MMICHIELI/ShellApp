@@ -1,0 +1,48 @@
+.icon-box {
+  position: relative;
+  width: 100%;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  height: auto;
+  display:table;
+}
+
+.left-box {
+  display: table-cell;
+  position: relative;
+  width: 15%;
+}
+
+.right-box {
+  display: table-cell;
+  position: relative;
+  width: 85%
+}
+
+.label {
+  text-align: center;
+  color: white;
+  font-size: 10pt;
+}
+
+.value {
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  font-size: 10pt;
+}
+
+.material-icons {
+  line-height: 1 !important;
+}
+
+.icon {
+  width: 100%;
+  text-align: center;
+  color: #4c4c4c;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 10px; left: 0;
+  font-size: 20px;
+}

@@ -1,0 +1,62 @@
+.zero-block-title{
+  /*background: rgb(46, 50, 78);*/
+  background: #485563;  /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+/*  background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  transition:0.3s;
+}
+
+.zero-arrow-down {
+  border-top: 10px solid rgb(46, 50, 78);
+  transition:0.3s;
+}
+
+.zero-block-title-secondary{
+  background: #2c2e3f;
+  transition:0.3s;
+}
+
+.zero-arrow-down-secondary {
+  border-top: 10px solid #2c2e3f;
+  transition:0.3s;
+}
+
+.zero-plain-block {
+  background-color:rgb(46, 50, 78);
+  color:white !important;
+  border-radius: 5px;
+}
+.zero-plain-block label{
+  color:#d8d8d8;
+}
+.zero-label-code{
+  background-color: rgb(97, 104, 162);
+  opacity: 0.50;
+}
+
+.zero-divider-color {
+  border-right-color: #436f99 !important;
+}
+
+.zero-new-row {
+  background: #94b5d4 !important;
+}
+
+.zero-radio-button .mat-radio-checked .mat-radio-outer-circle {
+  border-color: #2C2E3F;
+}
+
+.zero-radio-button .mat-radio-outer-circle {
+  transition: border-color cubic-bezier(0.7, -0.46, 1, 1) 180ms;
+}
+
+.zero-radio-button .mat-radio-inner-circle {
+  background-color: #2C2E3F;
+  transition: transform cubic-bezier(0.7, -0.46, 1, 1) 180ms, background-color cubic-bezier(0.7, -0.46, 1, 1) 330ms;
+}
+
+.zero-radio-button .mat-ripple-element {
+  background-color: rgba(44, 46, 63, .2);
+  transition: transform cubic-bezier(0.7, -0.46, 1 , 1) 330ms;
+}

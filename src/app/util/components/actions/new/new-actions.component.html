@@ -1,0 +1,211 @@
+<div class="actions-container">
+
+  <ul class="actions-list" (mouseleave)="mouseLeave()" [@flyInOut]='state'>
+
+    <!-- RETURN ACTION-->
+    <li *ngIf="actionModel.displayReturnButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="undo()"
+        pTooltip="{{ 'BUTTONS.RETURN' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa material-icons white">undo</i>
+    </li>
+
+    <!-- RETURN WITH CONFIRMATION-->
+    <li *ngIf="actionModel.displayUndoConfirmButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="undoConfirm()"
+        pTooltip="{{ 'BUTTONS.RETURN' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa material-icons white">undo</i>
+    </li>
+
+    <!-- Validation ACTION-->
+    <li *ngIf="actionModel.displayValidationButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="validate()"
+        pTooltip="{{ 'BUTTONS.VALIDATE' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa material-icons success">check</i>
+    </li>
+
+    <!-- AddNewRight ACTION-->
+    <li *ngIf="actionModel.displayAddNewRightButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="AddNewRight()"
+        pTooltip="{{ 'BUTTONS.ADD_RIGHT' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa fa-check-square-o success" aria-hidden="true"></i>
+    </li>
+
+    <!-- Submit to Validation ACTION-->
+    <li *ngIf="actionModel.displaySubmitToValidationButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="submitToValidation()"
+        pTooltip="{{ 'BUTTONS.SUBMIT_TO_VALIDATION' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+        <i class="fa material-icons success">check</i>
+    </li>
+
+    <!-- DELETE ACTION-->
+    <li *ngIf="actionModel.displayDeleteButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="delete()"
+        pTooltip="{{ 'BUTTONS.DELETE' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa fa-trash-o red" aria-hidden="true"></i>
+    </li>
+
+    <!-- CANCEL ACTION-->
+    <li *ngIf="actionModel.displayCancelButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="cancel()"
+        pTooltip="{{ 'BUTTONS.CANCEL' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa material-icons red">cancel</i>
+
+    </li>
+
+    <!-- DUPLICATE ACTION-->
+    <li *ngIf="actionModel.displayDuplicateButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="duplicate()"
+        pTooltip="{{ 'BUTTONS.DUPLICATE' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa material-icons purple">flip</i>
+    </li>
+
+    <li *ngIf="actionModel.displayCreateDuplicateButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="createDuplicate()"
+        pTooltip="{{ 'BUTTONS.SAVE' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa fa-floppy-o success" aria-hidden="true"></i>
+    </li>
+
+    <!-- EDIT ACTION-->
+    <li *ngIf="actionModel.displayEditButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="edit()"
+        pTooltip="{{ 'BUTTONS.UPDATE' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa material-icons warning">mode_edit</i>
+    </li>
+
+    <!-- POST ACTION-->
+    <li *ngIf="actionModel.displayPostButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="post()"
+        pTooltip="{{ 'BUTTONS.SAVE' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa material-icons success">save</i>
+    </li>
+
+    <!-- UPDATE ACTION-->
+    <li *ngIf="actionModel.displayUpdateButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="put()"
+        pTooltip="{{ 'BUTTONS.SAVE' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed">
+      <i class="fa material-icons success">save</i>
+    </li>
+
+    <!-- ADD BUTTON -->
+    <li *ngIf="actionModel.displayAddButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="add()"
+        pTooltip="{{ 'BUTTONS.ADD' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed"
+        id="addActionButton">
+      <i class="fa material-icons success">add</i>
+    </li>
+
+    <!-- ADD IN SESSION BUTTON -->
+    <li *ngIf="actionModel.displayAddInSessionButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="addInSession()"
+        pTooltip="{{ 'BUTTONS.ADD_IN_SESSION' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed"
+        id="addInSessionActionButton">
+      <i class="fa material-icons dark-blue">check</i>
+    </li>
+
+    <!-- UPDATE IN SESSION BUTTON -->
+    <li *ngIf="actionModel.displayUpdateInSessionButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="updateInSession()"
+        pTooltip="{{ 'BUTTONS.UPDATE_IN_SESSION' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed"
+        id="updateInSessionActionButton">
+      <i class="fa material-icons dark-blue">check</i>
+    </li>
+
+    <!-- CREATION GROUP BUTTON -->
+    <li *ngIf="actionModel.displaySignButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="sign()"
+        pTooltip="{{ 'BUTTONS.CREATE_GROUP' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed"
+        id="signActionButton">
+        <i class="fa material-icons purple">style</i>
+      <!--<button md-icon-button class="mdi mdi-group success md-36" aria-hidden="true"></button>-->
+    </li>
+
+    <!-- SIGN BUTTON -->
+    <li *ngIf="actionModel.displayProtectButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="protect()"
+        pTooltip="{{ 'BUTTONS.PROTECT' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed"
+        id="protectButton">
+      <i class="fa material-icons dark-blue">verified_user</i>
+      <!--<button md-icon-button class="mdi mdi-group success md-36" aria-hidden="true"></button>-->
+    </li>
+
+    <!-- GENERATE PDF BUTTON -->
+    <li *ngIf="actionModel.displayDownloadDraftPdfButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="downloadDraftPdf()"
+        pTooltip="{{ 'BUTTONS.DOWNLOAD_DRAFT' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed"
+        id="downloadDraftPdfButton">
+      <i class="fa material-icons white" style="color: #007bff !important;">file_download</i>
+    </li>
+
+    <!-- GENERATE PDF BUTTON -->
+    <li *ngIf="actionModel.displayDownloadPdfButton" [ngClass]="{'show': show}"
+        class="action-item animate"
+        (click)="downloadPdf()"
+        pTooltip="{{ 'BUTTONS.DOWNLOAD' | translate }}"
+        tooltipPosition="left"
+        positionStyle="fixed"
+        id="downloadPdfButton">
+      <i class="fa material-icons white" style="color: darkgreen !important;">file_download</i>
+    </li>
+
+    <li (mouseenter)="mouseEnter()"
+        class="action" [ngClass]="{'on-hover':state === 'in'}">
+      <i *ngIf="state === 'in'" class="fa material-icons active-action">keyboard_arrow_up</i>
+      <i *ngIf="state === 'out'" class="fa material-icons interaction">add</i>
+    </li>
+  </ul>
+
+</div>

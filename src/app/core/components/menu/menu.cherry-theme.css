@@ -1,0 +1,36 @@
+/**
+* DARK THEME
+*/
+.cherry-theme-app-menu{
+  background: #2F2F2F;
+  color:white;
+}
+
+#cherry-theme-links{
+  margin:0;
+  width:100%;
+  list-style: none;
+}
+
+#cherry-theme-links > li{
+  padding:15px;
+  padding-left:25px;
+  margin-left:0;
+}
+
+#cherry-theme-links > li:hover{
+  cursor:pointer;
+  background: #2c2e3f;
+}
+
+.cherry-theme:hover{
+  border-right:6px solid #be133a;
+  transition:0.2s;
+}
+
+.cherry-theme-active-link{
+  background: rgb(46, 50, 78);
+  color:white;
+  border-right:6px solid #d64761;
+  transition:0.2s;
+}
