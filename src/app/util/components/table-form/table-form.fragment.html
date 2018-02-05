@@ -6,9 +6,9 @@
      pTooltip="Supprimer"
      tooltipPosition="top"
      tooltipStyleClass="test">delete</i>
-  <md-divider
+  <mat-divider
     *ngIf="tableActionButtons.displayDuplicateButton"
-    class="vertical-divider {{theme}}-divider-color"></md-divider>
+    class="vertical-divider {{theme}}-divider-color"></mat-divider>
   <i
     *ngIf="tableActionButtons.displayDuplicateButton"
     id="duplicateItem"
@@ -17,9 +17,9 @@
     pTooltip="Dupliquer"
     tooltipPosition="top"
     tooltipStyleClass="test">content_copy</i>
-  <md-divider
+  <mat-divider
     *ngIf="tableActionButtons.displaySearchButton"
-    class="vertical-divider {{theme}}-divider-color"></md-divider>
+    class="vertical-divider {{theme}}-divider-color"></mat-divider>
   <i
     *ngIf="tableActionButtons.displaySearchButton"
     id="searchItem"
@@ -36,12 +36,12 @@
 
       <th *ngIf="withCheckBoxes" class="checkBox-column {{theme}}-block-title"
           style="width:40px;">
-        <md-checkbox
+        <mat-checkbox
           id="check-all"
           [ngClass]="rows !== null ? theme+'-light':''"
           (change)="selectAllItem()"
           [(ngModel)]="selectAllItems">
-        </md-checkbox>
+        </mat-checkbox>
       </th>
       <th *ngFor="let column of columns" class="{{theme}}-block-title" mandatory="true"
           [ngStyle]="{'width': column.columnWidth}">
@@ -61,26 +61,26 @@
         [ngClass]="newlyAdded[i]==true ? theme+'-new-row':''">
 
       <td *ngIf="withCheckBoxes" style="display:inline-block; width:40px; margin-top:6px; padding-left:9px">
-        <md-checkbox id="{{'checkbox' + i}}"
+        <mat-checkbox id="{{'checkbox' + i}}"
                      [ngClass]="row !== null ? theme+'-dark':''"
                      (change)="selectOrUnselectItem(row)"
                      [(ngModel)]="row.checked">
-        </md-checkbox>
+        </mat-checkbox>
       </td>
       <td *ngFor="let column of columns" [ngSwitch]="column.inputType" [ngStyle]="{'width': column.columnWidth}"
 
           [ngClass]="row !== null ? 'paddingTd-'+column.inputType:''">
-        <md-input-container *ngSwitchCase="1">
+        <mat-input-container *ngSwitchCase="1">
           <input mdInput
                  id="{{prefix + '-' + column.name + i}}"
                  #inputText
                  maxlength="{{column.maxLength}}"
                  [(ngModel)]="row[column.name]"
                  [formControl]="formGroup.get(prefix + '-' + column.name + i)">
-          <md-hint align="end" *ngIf="column.maxLength">{{inputText.value.length}} / {{column.maxLength}}</md-hint>
-          <md-hint align="start" *ngIf="column.pattern">{{column.pattern}}</md-hint>
-        </md-input-container>
-        <md-input-container *ngSwitchCase="2" align="right">
+          <mat-hint align="end" *ngIf="column.maxLength">{{inputText.value.length}} / {{column.maxLength}}</mat-hint>
+          <mat-hint align="start" *ngIf="column.pattern">{{column.pattern}}</mat-hint>
+        </mat-input-container>
+        <mat-input-container *ngSwitchCase="2" align="right">
           <input mdInput
                  id="{{'inputNumber' + ' ' + prefix + '-' + column.name + i}}"
                  type="number"
@@ -90,26 +90,26 @@
                  [(ngModel)]="row[column.name]"
                  (blur)="onUpdateValue($event, i, column.name)"
                  [formControl]="formGroup.get(prefix + '-' + column.name + i)">
-        </md-input-container>
+        </mat-input-container>
 
         <div *ngSwitchCase="3">
-          <md-input-container>
-            <input mdInput
-                   id="startDate"
-                   [mdDatepicker]="picker"
-                   [(ngModel)]="row[column.name]"
-                   [formControl]="formGroup.get(prefix + '-' + column.name + i)">
-            <button mdSuffix [mdDatepickerToggle]="picker"></button>
-          </md-input-container>
-          <md-datepicker #picker ></md-datepicker>
+          <!--<mat-input-container>-->
+            <!--<mat-input mdInput-->
+                   <!--id="startDate"-->
+                   <!--[mat]="picker"-->
+                   <!--[(ngModel)]="row[column.name]"-->
+                   <!--[formControl]="formGroup.get(prefix + '-' + column.name + i)">-->
+            <!--<button mdSuffix [mdDatepickerToggle]="picker"></button>-->
+          <!--</mat-input-container>-->
+          <mat-datepicker #picker ></mat-datepicker>
         </div>
-        <md-select *ngSwitchCase="6"
+        <mat-select *ngSwitchCase="6"
                    [(ngModel)]="row[column.name].id"
                    [formControl]="formGroup.get(prefix + '-' + column.name + i)">
-          <md-option *ngFor="let value of column.selectValues" [value]="value.id">
+          <mat-option *ngFor="let value of column.selectValues" [value]="value.id">
             {{value[column.fieldToDisplay]}}
-          </md-option>
-        </md-select>
+          </mat-option>
+        </mat-select>
         <mmi-auto-complete-component *ngSwitchCase="5"
                                     [control]="formGroup.get(prefix + '-' + column.name + i)"
                                     [fieldToDisplay]="column.fieldToDisplay"
@@ -125,20 +125,20 @@
                 [ngClass]="{'has-error': formGroup.get(prefix + '-' + column.name + i).status === 'INVALID' && formGroup.get(prefix + '-' + column.name + i).touched}">
         </select>
 
-        <md-checkbox id="{{'checkboxInput' + i}}" class="test"
+        <mat-checkbox id="{{'checkboxInput' + i}}" class="test"
                      *ngSwitchCase="8"
                      [ngClass]="row !== null ? theme+'-dark':''"
                      [(ngModel)]="row[column.name]"
                      (change)="onCheckBoxClick($event, i, column.name)">
-        </md-checkbox>
+        </mat-checkbox>
 
-        <md-select *ngSwitchCase="9"
+        <mat-select *ngSwitchCase="9"
                    [(ngModel)]="row[column.name]"
                    [formControl]="formGroup.get(prefix + '-' + column.name + i)">
-          <md-option *ngFor="let value of column.selectValues" [value]="value.id">
+          <mat-option *ngFor="let value of column.selectValues" [value]="value.id">
             {{value[column.fieldToDisplay]}}
-          </md-option>
-        </md-select>
+          </mat-option>
+        </mat-select>
 
         <span *ngSwitchCase="4">{{row[column.name]}}</span>
         <span *ngSwitchCase="10">{{row[column.name] | myDisplayNullPipe:column.objectField}}</span>
@@ -156,11 +156,11 @@
         </mmi-auto-complete-component>
 
         <div>
-          <md-input-container *ngSwitchCase="14">
-            <input mdInput [mdAutocomplete]="auto" [(ngModel)]="row[column.name]"
+          <mat-input-container *ngSwitchCase="14">
+            <input mdInput [autocomplete]="auto" [(ngModel)]="row[column.name]"
                    (focus)="getListForSimpleAuto(i, column)"
                    [formControl]="formGroup.get(prefix + '-' + column.name + i)">
-          </md-input-container>
+          </mat-input-container>
 
 
           <div *ngSwitchCase="15" align="center">
@@ -171,11 +171,11 @@
                tooltipPosition="top">{{getIconName()}}</i>
           </div>
 
-          <md-autocomplete #auto="mdAutocomplete">
-            <md-option *ngFor="let item of column.filteredList | async" [value]="item[column.fieldToSave]">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let item of column.filteredList | async" [value]="item[column.fieldToSave]">
               {{item[column.fieldToDisplay]}}
-            </md-option>
-          </md-autocomplete>
+            </mat-option>
+          </mat-autocomplete>
         </div>
       </td>
     </tr>

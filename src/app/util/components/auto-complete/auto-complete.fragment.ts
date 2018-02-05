@@ -8,7 +8,7 @@ import {
 import { FormControl } from '@angular/forms';
 import { isNullOrUndefined } from 'util';
 import { Theme } from '../../decorators/theme.decorator';
-import { MdAutocompleteTrigger } from '@angular/material';
+import { MatAutocompleteTrigger } from '@angular/material';
 
 @Component({
   selector: 'mmi-auto-complete-component',
@@ -40,7 +40,7 @@ export class AutoCompleteFragment implements OnInit, AfterViewInit  {
 
   @Output('onModelChangeEmitter') public onModelChangeEmitter = new EventEmitter();
   @ViewChild('autoCompleteInputField') public el: ElementRef;
-  @ViewChild('autoCompleteInputField', { read: MdAutocompleteTrigger }) public trigger: MdAutocompleteTrigger;
+  @ViewChild('autoCompleteInputField', { read: MatAutocompleteTrigger }) public trigger: MatAutocompleteTrigger;
   @ViewChild('auto') private auto: ElementRef;
 
   constructor(private rd: Renderer2) {

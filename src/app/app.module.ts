@@ -1,6 +1,3 @@
-import { FeaturesREConsultComponent } from './core/consult/features-re/features-re-consult.component';
-import { FeaturesHEConsultComponent } from './core/consult/features-he/features-he-consult.component';
-import { FeaturesSBConsultComponent } from './core/consult/features-sb/features-sb-consult.component';
 // Application wide providers
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
@@ -8,17 +5,12 @@ import { ToasterModule, ToasterService } from 'angular2-toaster';
 import { ToasterEventsService } from './util/services/events/toaster/toaster-events.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { FormActionsEventsService } from './util/services/events/form-action/form-actions-events.service';
-import { Http } from '@angular/http';
+
 import { ApplicationRef, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/components/header/header.component';
-import { LocationBarComponent } from './core/components/header/location-bar/location-bar.component';
 import { MenuComponent } from './core/components/menu/menu.component';
-import { FeatureRepository } from './commercial/api/feature-repository/feature.repository';
 import { DashboardTemplate } from './core/templates/dashboard/dashboard.template';
-import { ErrorsComponent } from './error/errors.component';
-import { ActuLeftComponent } from './core/consult/actu-left.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { UtilModule } from './util/util.module';
 import { PreloadAllModules, RouterModule } from '@angular/router';
@@ -28,16 +20,13 @@ import { createInputTransfer, createNewHosts, removeNgStyles } from '@angularcla
 import { LocalStorageEventsService } from './util/services/events/storage/local-storage-events.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ProductRepository } from './video/api/product.repository';
-import { PurchaseOrderRepository } from './video/api/purchase-order.repository';
+import { HttpClient } from '@angular/common/http';
 
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState,
-  FeatureRepository,
   ToasterService,
   ToasterEventsService,
-  FormActionsEventsService,
   LocalStorageEventsService
 ];
 
@@ -47,7 +36,7 @@ type StoreType = {
   disposeOldHosts: () => void
 };
 
-export function httpLoaderFactory(http: Http) {
+export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/trad/', '.json');
 }
 
@@ -59,7 +48,6 @@ export function httpLoaderFactory(http: Http) {
   declarations: [
     AppComponent,
     HeaderComponent,
-    LocationBarComponent,
     MenuComponent,
     DashboardTemplate
   ],
@@ -72,7 +60,7 @@ export function httpLoaderFactory(http: Http) {
       loader: {
         provide: TranslateLoader,
         useFactory: (httpLoaderFactory),
-        deps: [Http]
+        deps: [HttpClient]
       }
     }),
     UtilModule.forRoot(),
@@ -80,9 +68,7 @@ export function httpLoaderFactory(http: Http) {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS,
-    ProductRepository,
-    PurchaseOrderRepository
+    APP_PROVIDERS
   ]
 })
 export class AppModule {

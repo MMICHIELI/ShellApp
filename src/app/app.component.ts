@@ -17,7 +17,7 @@ import { FeatureModel } from './models/feature.model';
  * Top Level Component
  */
 @Component({
-  selector: 'app',
+  selector: 'shell-app',
   styleUrls: [
     './app.component.css'
   ],

@@ -157,7 +157,7 @@ a {
   right: 20px;
   width: 30px;
   height: 30px;
-  background-image: url('./../../../../assets/img/persona.png');
+  /*background-image: url('');*/
   background-size: 30px 30px;
   background-repeat: no-repeat;
   border-radius: 50%;

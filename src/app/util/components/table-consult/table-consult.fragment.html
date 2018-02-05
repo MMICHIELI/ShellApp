@@ -4,12 +4,12 @@
     <tr class="headers">
       <th *ngIf="withCheckBoxes" class="checkBox-column {{theme}}-block-title"
           style="width:40px;">
-        <md-checkbox
+        <mat-checkbox
           id="check-all"
           [ngClass]="rows !== null ? theme+'-light':''"
           (change)="selectAllItem()"
           [(ngModel)]="selectAllItems">
-        </md-checkbox>
+        </mat-checkbox>
       </th>
       <th *ngFor="let column of columns" class="{{theme}}-block-title" mandatory="true"
           [ngStyle]="{'width': column.columnWidth}">
@@ -22,11 +22,11 @@
     <tr *ngFor="let row of rows; let j = index" class="tr-consult"
         [ngClass]="{'regroup-row-1': row.rowGrp === true, 'regroup-row-2': row.rowGrp === false }">
       <td *ngIf="withCheckBoxes" class="td-checkbox">
-        <md-checkbox id="{{'checkbox' + i}}"
+        <mat-checkbox id="{{'checkbox' + i}}"
                      [ngClass]="row !== null ? theme+'-dark':''"
                      (change)="selectOrUnselectItem(row)"
                      [(ngModel)]="row.checked">
-        </md-checkbox>
+        </mat-checkbox>
       </td>
       <td *ngFor="let column of columns; let i=index" [ngStyle]="{'width': column.columnWidth}"
           [ngSwitch]="column.fieldType"

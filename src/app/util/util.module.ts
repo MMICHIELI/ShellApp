@@ -46,31 +46,27 @@ import { CountoModule } from 'angular2-counto';
 
 import {
   DateAdapter,
-  MD_DATE_FORMATS,
-  MdAutocompleteModule,
-  MdButtonModule,
-  MdCardModule,
-  MdCheckboxModule,
-  MdChipsModule,
-  MdDatepickerModule,
-  MdGridListModule,
-  MdInputModule,
-  MdListModule,
-  MdNativeDateModule,
-  MdProgressBarModule,
-  MdRadioModule,
-  MdSelectModule,
-  MdSidenavModule,
-  MdTabsModule
+  MAT_DATE_FORMATS,
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatGridListModule,
+  MatInputModule,
+  MatListModule,
+  MatNativeDateModule,
+  MatProgressBarModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatTabsModule,
 } from '@angular/material';
 import { TrimStringPipe } from './pipes/trim-string.pipe';
 import { MyNumberFormatterDirective } from './directives/my-number-formatter-directive';
 import { MyNumberPipe } from './pipes/my-number-pipe';
 
-import { CostCenterEventsService } from './services/events/cost-center/cost-center.service';
-import { SupplierMiloRepository } from '../milo/api/supplier-milo.repository';
-import { ThirdPartyRepository } from '../referentiel/api/third-party.repository';
-import { CustomDatePicker } from './components/date-picker/date-picker';
 import { RightPopinComponent } from './components/popin/right/right-popin.component';
 import { BottomPopinComponent } from './components/popin/bottom/bottom-popin.component';
 import { PopinService } from './components/popin/popin.service';
@@ -79,12 +75,8 @@ import { SimpleAutocompleteFragment } from './components/simple-auto-complete/si
 import { AutoCompleteFragment } from './components/auto-complete/auto-complete.fragment';
 import { FileUploadComponent } from './components/upload/file-upload.component';
 import { FileUploadModule } from 'ng2-file-upload';
-import { SubHeaderTabVideoService } from '../video/modules/sub-header-tab/sub-header-tab-video.service';
-import { GlobalErrorHandler } from './services/global.error.handler';
-import { MyDialogPopupComponent } from './components/popup/popup/popup.component';
 import { LocalDatePipe } from './pipes/local-date-pipe';
 import { FormatNumberInput } from './pipes/format-number-input';
-import { CustomDateAdapter } from './date/date-adapter';
 import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
 
 @NgModule({
@@ -108,20 +100,20 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
     ConfirmDialogModule,
     InputMaskModule,
     DragDropModule,
-    MdListModule,
-    MdCheckboxModule,
-    MdInputModule,
-    MdSelectModule,
-    MdAutocompleteModule,
-    MdProgressBarModule,
-    MdButtonModule,
-    MdGridListModule,
-    MdCardModule,
-    MdSidenavModule,
-    MdDatepickerModule,
-    MdNativeDateModule,
-    MdTabsModule,
-    MdChipsModule,
+    MatListModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    MatProgressBarModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTabsModule,
+    MatChipsModule,
     AccordionModule,
     ListboxModule,
     FileUploadModule,
@@ -168,11 +160,11 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
     PopinService,
     DecimalPipe,
     {
-      provide: MD_DATE_FORMATS, useValue: CUSTOM_DATE_FORMATS
-    },
-    {
-      provide: DateAdapter, useClass: CustomDateAdapter
+      provide: MAT_DATE_FORMATS, useValue: CUSTOM_DATE_FORMATS
     }
+    // {
+    //   provide: DateAdapter, useClass: CustomDateAdapter
+    // }
   ],
   exports: [
     CommonModule,
@@ -207,19 +199,19 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
     MyNumberPipe,
 
     AutoCompleteFragment,
-    MdButtonModule,
-    MdRadioModule,
-    MdGridListModule,
-    MdCardModule,
-    MdSidenavModule,
-    MdDatepickerModule,
-    MdNativeDateModule,
-    MdTabsModule,
-    MdChipsModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatGridListModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTabsModule,
+    MatChipsModule,
     RightPopinComponent,
     BottomPopinComponent,
     CapitalizefirstPipe,
-    MdChipsModule,
+    MatChipsModule,
     SimpleAutocompleteFragment,
     AccordionModule,
     ListboxModule,
