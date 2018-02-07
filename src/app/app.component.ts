@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
               private toasterService: ToasterService,
               private toasterEventsService: ToasterEventsService) {
 
-    translate.addLangs(['en', 'fr', 'de']);
+    translate.addLangs(['en', 'fr']);
     translate.setDefaultLang('en');
     translate.use(this.localStorage.get('lang') || translate.getBrowserLang());
 

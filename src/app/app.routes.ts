@@ -14,5 +14,5 @@ export const ROUTES: Routes = [
   //   path: 'second',
   //   loadChildren: './second#SecondModule'
   // },
-  {path: '/', redirectTo: '/dashboard', pathMatch: 'full'},
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
 ];

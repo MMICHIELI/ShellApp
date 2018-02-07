@@ -5,7 +5,6 @@ import { ToasterModule, ToasterService } from 'angular2-toaster';
 import { ToasterEventsService } from './util/services/events/toaster/toaster-events.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 import { ApplicationRef, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/components/header/header.component';
@@ -20,7 +19,7 @@ import { createInputTransfer, createNewHosts, removeNgStyles } from '@angularcla
 import { LocalStorageEventsService } from './util/services/events/storage/local-storage-events.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -36,9 +35,9 @@ type StoreType = {
   disposeOldHosts: () => void
 };
 
-export function httpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, '/assets/trad/', '.json');
-}
+// export function httpLoaderFactory(http: Http) {
+//   return new TranslateHttpLoader(http, '/assets/trad/', '.json');
+// }
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
@@ -57,11 +56,11 @@ export function httpLoaderFactory(http: HttpClient) {
     BrowserModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (httpLoaderFactory),
-        deps: [HttpClient]
-      }
+      // loader: {
+      //   provide: TranslateLoader,
+      //   useFactory: (httpLoaderFactory),
+      //   deps: [Http]
+      // }
     }),
     UtilModule.forRoot(),
     RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules})
