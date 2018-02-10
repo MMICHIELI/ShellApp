@@ -47,7 +47,7 @@ export function httpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HeaderComponent,
-    //MenuComponent,
+    MenuComponent,
     DashboardTemplate
   ],
   imports: [ // import Angular's modules

@@ -64,6 +64,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { LocalDatePipe } from './pipes/local-date-pipe';
 import { FormatNumberInput } from './pipes/format-number-input';
 import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -151,6 +152,7 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
     DataTableModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     NewActionsComponent,
     AutoCompleteModule,
     SelectButtonModule,

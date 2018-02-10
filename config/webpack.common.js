@@ -211,11 +211,11 @@ module.exports = function (options) {
           "groupBy":[
             {
               "pattern":"./src/assets/i18n/**/en.lang.json",
-              "fileName":"./src/assets/trad/en.json"
+              "fileName":"assets/trad/en.json"
             },
             {
               "pattern":"./src/assets/i18n/**/fr.lang.json",
-              "fileName":"./src/assets/trad/fr.json"
+              "fileName":"assets/trad/fr.json"
             }
           ]
         }

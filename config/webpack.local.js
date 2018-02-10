@@ -1,4 +1,3 @@
-// import {AngularCompilerPlugin} from '@ngtools/webpack';
 /**
  * @author: @AngularClass
  */
