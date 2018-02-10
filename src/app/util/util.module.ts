@@ -8,9 +8,11 @@ import { HeaderEventsService } from './services/events/header/header-events.serv
 import { LocalStorageService } from './services/storage/local-storage.service';
 import { ThemeEventsService } from './services/events/theme/theme-event.service';
 import { LangEventsService } from './services/events/lang/lang-event.service';
+import { SessionStorageService } from './services/storage/session-storage.service';
+import { SessionStorageEventsService } from './services/events/storage/session-storage-events.service';
+import { RegexService } from './services/regex/regex.service';
 // Modules
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { DataTableModule } from 'primeng/components/datatable/datatable';
 import { TooltipModule } from 'primeng/components/tooltip/tooltip';
@@ -19,29 +21,17 @@ import { SelectButtonModule } from 'primeng/components/selectbutton/selectbutton
 import { CalendarModule } from 'primeng/components/calendar/calendar';
 import { MultiSelectModule } from 'primeng/components/multiselect/multiselect';
 import { SharedModule } from 'primeng/components/common/shared';
-import { SessionStorageService } from './services/storage/session-storage.service';
-import { SessionStorageEventsService } from './services/events/storage/session-storage-events.service';
 import { DialogModule } from 'primeng/components/dialog/dialog';
-import { GlobalSearchComponent } from '../core/components/global-search/global-search.component';
 import { ChipsModule } from 'primeng/components/chips/chips';
 import { CheckboxModule } from 'primeng/components/checkbox/checkbox';
-import { RegexService } from './services/regex/regex.service';
 import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
 import { DisplayNullPipe } from './pipes/display-null.pipe';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 import { SanitizeHtml } from './pipes/display-html.pipe';
-import { NewActionsComponent } from './components/actions/new/new-actions.component';
-import { BlockComponent } from './components/block/block.component';
-import { CurrencyNumberBoxComponent } from './components/number-box/currency-number-box.component';
-import { CurrencyNumberMultiBoxComponent } from './components/number-multibox/currency-number-multibox.component';
-import { IconBoxComponent } from './components/icon-box/icon-box.component';
-import { InlineIconBoxComponent } from './components/inline-icon-box/inline-icon-box.component';
+import { NewActionsComponent } from './components/actions/new-actions.component';
 import { RouterModule } from '@angular/router';
 import { AccordionModule, DragDropModule, ListboxModule } from 'primeng/primeng';
 import { SpacesNumberPipe } from './pipes/comma-separated-number-pipe';
-import { TableFormFragment } from './components/table-form/table-form.fragment';
-import { ContextBannerComponent } from './components/context-banner/context-banner.component';
-import { TableConsultFragment } from './components/table-consult/table-consult.fragment';
 import { CountoModule } from 'angular2-counto';
 
 import {
@@ -67,13 +57,9 @@ import { TrimStringPipe } from './pipes/trim-string.pipe';
 import { MyNumberFormatterDirective } from './directives/my-number-formatter-directive';
 import { MyNumberPipe } from './pipes/my-number-pipe';
 
-import { RightPopinComponent } from './components/popin/right/right-popin.component';
-import { BottomPopinComponent } from './components/popin/bottom/bottom-popin.component';
-import { PopinService } from './components/popin/popin.service';
 import { CapitalizefirstPipe } from './pipes/capitalizefirst.pipe';
 import { SimpleAutocompleteFragment } from './components/simple-auto-complete/simple-auto-complete.fragment';
 import { AutoCompleteFragment } from './components/auto-complete/auto-complete.fragment';
-import { FileUploadComponent } from './components/upload/file-upload.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { LocalDatePipe } from './pipes/local-date-pipe';
 import { FormatNumberInput } from './pipes/format-number-input';
@@ -81,15 +67,19 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
 
 @NgModule({
   imports: [
+    // @angular/forms
+    FormsModule,
+    ReactiveFormsModule,
+    // @angular/router
+    RouterModule,
+    // @ngx-translate
+    TranslateModule,
+    // @angular/common
+    CommonModule,
+    // Primeng Modules
     TooltipModule,
     ChipsModule,
     DataTableModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    RouterModule,
-    TranslateModule,
-    CommonModule,
     AutoCompleteModule,
     SelectButtonModule,
     CalendarModule,
@@ -100,6 +90,9 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
     ConfirmDialogModule,
     InputMaskModule,
     DragDropModule,
+    AccordionModule,
+    ListboxModule,
+    // @angular/Material
     MatListModule,
     MatCheckboxModule,
     MatInputModule,
@@ -114,37 +107,25 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
     MatNativeDateModule,
     MatTabsModule,
     MatChipsModule,
-    AccordionModule,
-    ListboxModule,
+    // ng2-fileUpload
     FileUploadModule,
+    // Counto
     CountoModule
   ],
   declarations: [
-    GlobalSearchComponent,
     DisplayNullPipe,
     SpacesNumberPipe,
     MatchHeightDirective,
     SanitizeHtml,
     TrimStringPipe,
     NewActionsComponent,
-    BlockComponent,
-    CurrencyNumberBoxComponent,
-    TableFormFragment,
-    TableConsultFragment,
     MyNumberFormatterDirective,
     MyNumberPipe,
     AutoCompleteFragment,
-    RightPopinComponent,
-    BottomPopinComponent,
     CapitalizefirstPipe,
     SimpleAutocompleteFragment,
-    FileUploadComponent,
-    IconBoxComponent,
-    InlineIconBoxComponent,
     LocalDatePipe,
     FormatNumberInput,
-    ContextBannerComponent,
-    CurrencyNumberMultiBoxComponent
   ],
   providers: [
     LangEventsService,
@@ -157,14 +138,10 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
     ArrayService,
     MyNumberPipe,
     DatePipe,
-    PopinService,
     DecimalPipe,
     {
       provide: MAT_DATE_FORMATS, useValue: CUSTOM_DATE_FORMATS
     }
-    // {
-    //   provide: DateAdapter, useClass: CustomDateAdapter
-    // }
   ],
   exports: [
     CommonModule,
@@ -174,10 +151,7 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
     DataTableModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
-    GlobalSearchComponent,
     NewActionsComponent,
-    BlockComponent,
     AutoCompleteModule,
     SelectButtonModule,
     CalendarModule,
@@ -193,11 +167,8 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
     SanitizeHtml,
     InputMaskModule,
     DragDropModule,
-    TableFormFragment,
-    TableConsultFragment,
     MyNumberFormatterDirective,
     MyNumberPipe,
-
     AutoCompleteFragment,
     MatButtonModule,
     MatRadioModule,
@@ -208,23 +179,14 @@ import { CUSTOM_DATE_FORMATS } from './date/date-format-constants';
     MatNativeDateModule,
     MatTabsModule,
     MatChipsModule,
-    RightPopinComponent,
-    BottomPopinComponent,
     CapitalizefirstPipe,
     MatChipsModule,
     SimpleAutocompleteFragment,
     AccordionModule,
     ListboxModule,
-    FileUploadComponent,
     FileUploadModule,
     CountoModule,
-    CurrencyNumberBoxComponent,
-    IconBoxComponent,
-    InlineIconBoxComponent,
-    LocalDatePipe,
-    FormatNumberInput,
-    ContextBannerComponent,
-    CurrencyNumberMultiBoxComponent
+    FormatNumberInput
   ],
   entryComponents: [
   ]

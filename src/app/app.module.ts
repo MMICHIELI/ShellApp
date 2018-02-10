@@ -19,7 +19,7 @@ import { createInputTransfer, createNewHosts, removeNgStyles } from '@angularcla
 import { LocalStorageEventsService } from './util/services/events/storage/local-storage-events.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Http } from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -35,9 +35,9 @@ type StoreType = {
   disposeOldHosts: () => void
 };
 
-// export function httpLoaderFactory(http: Http) {
-//   return new TranslateHttpLoader(http, '/assets/trad/', '.json');
-// }
+export function httpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, '/assets/trad/', '.json');
+}
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
@@ -47,25 +47,28 @@ type StoreType = {
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent,
+    //MenuComponent,
     DashboardTemplate
   ],
   imports: [ // import Angular's modules
     ToasterModule,
     ReactiveFormsModule,
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
-      // loader: {
-      //   provide: TranslateLoader,
-      //   useFactory: (httpLoaderFactory),
-      //   deps: [Http]
-      // }
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (httpLoaderFactory),
+        deps: [HttpClient]
+      }
     }),
     UtilModule.forRoot(),
     RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules})
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
+    HttpClient,
+    HttpClientModule,
     ENV_PROVIDERS,
     APP_PROVIDERS
   ]

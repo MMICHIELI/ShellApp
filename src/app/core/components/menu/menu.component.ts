@@ -3,7 +3,6 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { HeaderEventsService } from '../../../util/services/events/header/header-events.service';
 import { LocalStorageService } from '../../../util/services/storage/local-storage.service';
 import { ThemeEventsService } from '../../../util/services/events/theme/theme-event.service';
-import { MenuEventsService } from '../../../util/services/events/sub-header-tab/sub-header-tab-events.service';
 
 @Component({
   selector: 'mmi-menu',

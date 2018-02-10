@@ -1,0 +1,20 @@
+{
+  "MENU": {
+    "DASHBOARD": "DASHBOARD",
+    "MODULE1": "Premier Module",
+    "MODULE2": "Deuxième Module"
+  },
+  "GLOBAL_SEARCH": {
+    "PLACEHOLDER": "Rechercher par ...",
+    "#1": "Module n°1",
+    "#2": "Module n°2",
+    "#3": "Module n°3",
+    "#4": "Module n°4",
+    "#5": "Module n°5",
+    "LINK_ADVANCED_SEARCH": "Avancée",
+    "TOAST": {
+      "NO_RESULT_#1": "Aucun résultat ne correspond à votre recherche.",
+      "NO_RESULT_#2": "Aucun résultat ne correspond à votre recherche."
+    }
+  }
+}

@@ -6,7 +6,6 @@ const helpers = require('./helpers');
 const webpackMerge = require('webpack-merge'); // used to merge webpack configs
 const webpackMergeDll = webpackMerge.strategy({plugins: 'replace'});
 const commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
-// const angularCompilerPlugin = require('@ngtools/webpack');
 /**
  * Webpack Plugins
  */
@@ -94,7 +93,7 @@ module.exports = function (options) {
       chunkFilename: '[id].chunk.js',
 
       library: 'ac_[name]',
-      libraryTarget: 'var'
+      libraryTarget: 'var',
     },
 
     module: {
@@ -142,7 +141,7 @@ module.exports = function (options) {
           test: /\.scss$/,
           use: ['style-loader', 'css-loader', 'sass-loader'],
           include: [helpers.root('src', 'styles')]
-        }
+        },
 
       ]
 
@@ -206,10 +205,9 @@ module.exports = function (options) {
             '@angular/core',
             '@angular/common',
             '@angular/forms',
-            '@angular/http',
             '@angular/router',
             '@angularclass/hmr',
-            'rxjs'
+            'rxjs',
           ]
         },
         dllDir: helpers.root('dll'),

@@ -1,15 +1,12 @@
 import { Component, EventEmitter, HostListener, Inject, Input, OnInit, Output } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { MenuEventsService } from '../../../util/services/events/sub-header-tab/sub-header-tab-events.service';
 import { LocalStorageEventsService } from '../../../util/services/events/storage/local-storage-events.service';
 import { LocalStorageService } from '../../../util/services/storage/local-storage.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ProductRepository } from '../../../video/api/product.repository';
 import { SessionStorageService } from '../../../util/services/storage/session-storage.service';
-import { isNullOrUndefined } from 'util';
 import { ToasterEventsService } from '../../../util/services/events/toaster/toaster-events.service';
-import { PurchaseOrderRepository } from '../../../video/api/purchase-order.repository';
+
 
 @Component({
   selector: 'mmi-header',

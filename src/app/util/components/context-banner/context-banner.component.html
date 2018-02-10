@@ -1,8 +1,0 @@
-<div #banner
-[ngClass]="{'hide':isHide, 'show':!isHide}"
-class="banner shadow"
-[style.left.px]="left"
-[style.opacity]="opacity">
-  <ng-content></ng-content>
-  <i (click)="toggleDeployed()" class="material-icons movie">movie</i>
-</div>

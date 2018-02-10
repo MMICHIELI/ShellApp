@@ -7,10 +7,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { ToasterService, ToasterConfig } from 'angular2-toaster';
 import { ToasterEventsService } from './util/services/events/toaster/toaster-events.service';
 import { Theme } from './util/decorators/theme.decorator';
-import { MenuEventsService } from './util/services/events/sub-header-tab/sub-header-tab-events.service';
-import { routerTransition } from './util/animations/routerTransition';
-import { FeatureRepository } from './commercial/api/feature-repository/feature.repository';
-import { FeatureModel } from './models/feature.model';
 
 /*
  * App Component

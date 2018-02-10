@@ -3,7 +3,7 @@ import { ToasterEventsService } from '../../../util/services/events/toaster/toas
 import { Theme } from '../../../util/decorators/theme.decorator';
 
 @Component({
-  selector: 'sc-dashboard-template',
+  selector: 'mmi-dashboard-template',
   styleUrls: ['./dashboard.template.css'],
   templateUrl: './dashboard.template.html'
 })

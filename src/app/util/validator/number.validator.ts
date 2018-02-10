@@ -51,7 +51,7 @@ export class NumberValidator {
         return null;
       } else if (control.value !== null) {
         let numberWithoutSpaces = control.value.toString().replace(/ /g, '');
-        let myRegexNoDecimal = new RegExp(/^-?^[1-9]\d*$/, 'i');
+        let myRegexNoDecimal: any = new RegExp(/^-?^[1-9]\d*$/, 'i');
         if (!myRegexNoDecimal.test(numberWithoutSpaces)) {
           return { validatorNumberInteger: true };
         }

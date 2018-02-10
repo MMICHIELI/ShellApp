@@ -216,10 +216,6 @@ module.exports = function (options) {
             {
               "pattern":"./src/assets/i18n/**/fr.lang.json",
               "fileName":"./src/assets/trad/fr.json"
-            },
-            {
-              "pattern":"./src/assets/i18n/**/de.lang.json",
-              "fileName":"./src/assets/trad/de.json"
             }
           ]
         }
