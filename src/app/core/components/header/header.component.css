@@ -60,9 +60,8 @@ a {
 #logo-shell{
   position: absolute;
   float:left;
-  left: 5px;
   top: -8px;
-  width:80px;
+  width:50px;
   z-index: 1000;
   transition: 0.3s;
 }

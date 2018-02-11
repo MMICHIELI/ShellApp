@@ -1,0 +1,14 @@
+# TEAM
+
+  XS Developers -- New Technology Engineers
+
+# THANKS
+
+  <name>
+  MMichieli -- @MMICHIELI
+  AngularClass -- @AngularClass
+
+# XS DEVELOPERS
+
+  HTML5, CSS3
+  Angular5, TypeScript, Webpack2

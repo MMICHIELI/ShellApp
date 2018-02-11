@@ -1,5 +1,3 @@
-// TODO(gdi2290): switch to DLLs
-
 /**
  * Polyfills
  */
