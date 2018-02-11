@@ -6,13 +6,14 @@ export const ROUTES: Routes = [
     path: 'dashboard',
     component: DashboardTemplate
   },
-  // {
-  //   path: 'first',
-  //   loadChildren: './first#FirstModule'
-  // },
+  {
+    path: 'first',
+    loadChildren: './firstModule#FirstModule'
+  },
   // {
   //   path: 'second',
   //   loadChildren: './second#SecondModule'
   // },
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  {path: '**', component: DashboardTemplate},
 ];
