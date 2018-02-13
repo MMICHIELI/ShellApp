@@ -97,7 +97,6 @@
     "@ngx-translate/core": "^9.1.1",
     "@ngx-translate/http-loader": "^2.0.1",
     "@types/npm": "^2.0.29",
-    "angular2-counto": "^1.2.3",
     "angular2-toaster": "^4.0.2",
     "core-js": "^2.5.3",
     "cross-env": "^5.1.3",

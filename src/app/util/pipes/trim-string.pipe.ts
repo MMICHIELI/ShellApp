@@ -16,7 +16,7 @@ export class TrimStringPipe implements PipeTransform {
       return value;
     }
 
-    let posSpace = value.indexOf(' ', size);
+    const posSpace = value.indexOf(' ', size);
     if (posSpace !== -1) {
       return value.substring(0, posSpace) + ' ' + message;
     }

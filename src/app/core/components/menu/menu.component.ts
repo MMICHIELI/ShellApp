@@ -52,7 +52,7 @@ export class MenuComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   public onWindowScroll() {
-    let numberVar = this.document.documentElement.scrollTop;
+    const numberVar = this.document.documentElement.scrollTop;
     if (numberVar !== this.currentScroll) {
       this.toggleMenu.emit();
     }

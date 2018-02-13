@@ -90,7 +90,7 @@ export class AutoCompleteFragment implements OnInit, AfterViewInit  {
     if (event.target.value.length >= this.min) {
       this.autoCompleteGenericEmitter.emit(event);
     } else if (event.target.value.length === 0) {
-      let id = this.id;
+      const id = this.id;
       this.onModelChangeEmitter.emit({event, id});
     }
   }

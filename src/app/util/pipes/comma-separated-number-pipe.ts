@@ -8,7 +8,7 @@ export class SpacesNumberPipe implements PipeTransform {
 
   public transform(value: any): any {
     // we remove all spaces
-    let newValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    const newValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     return newValue;
   }
 }

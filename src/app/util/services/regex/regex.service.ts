@@ -10,7 +10,7 @@ export class RegexService {
     if (numberToCheck == null) {
       return false;
     } else {
-      let myRegexNoDecimal = new RegExp(/^\d+$/, 'i');
+      const myRegexNoDecimal = new RegExp(/^\d+$/, 'i');
       if (!myRegexNoDecimal.test(numberToCheck.toString())) {
         return true;
       }

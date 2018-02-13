@@ -7,7 +7,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { SessionStorageService } from '../../../util/services/storage/session-storage.service';
 import { ToasterEventsService } from '../../../util/services/events/toaster/toaster-events.service';
 
-
 @Component({
   selector: 'mmi-header',
   styleUrls: [
@@ -52,7 +51,7 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   public onWindowScroll() {
-    let numberVar = document.documentElement.scrollTop;
+    const numberVar = document.documentElement.scrollTop;
     if (numberVar > this.currentScroll) {
       this.isHide = true;
     }

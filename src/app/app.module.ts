@@ -29,11 +29,11 @@ const APP_PROVIDERS = [
   LocalStorageEventsService
 ];
 
-type StoreType = {
-  state: InternalStateType,
-  restoreInputValues: () => void,
-  disposeOldHosts: () => void
-};
+interface StoreType {
+  state: InternalStateType;
+  restoreInputValues: () => void;
+  disposeOldHosts: () => void;
+}
 
 export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/trad/', '.json');
@@ -93,7 +93,7 @@ export class AppModule {
      * Set input values
      */
     if ('restoreInputValues' in store) {
-      let restoreInputValues = store.restoreInputValues;
+      const restoreInputValues = store.restoreInputValues;
       setTimeout(restoreInputValues);
     }
 

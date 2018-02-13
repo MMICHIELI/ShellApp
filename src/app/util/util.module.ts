@@ -32,7 +32,6 @@ import { NewActionsComponent } from './components/actions/new-actions.component'
 import { RouterModule } from '@angular/router';
 import { AccordionModule, DragDropModule, ListboxModule } from 'primeng/primeng';
 import { SpacesNumberPipe } from './pipes/comma-separated-number-pipe';
-import { CountoModule } from 'angular2-counto';
 
 import {
   DateAdapter,
@@ -109,9 +108,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     MatChipsModule,
     // ng2-fileUpload
-    FileUploadModule,
-    // Counto
-    CountoModule
+    FileUploadModule
   ],
   declarations: [
     DisplayNullPipe,
@@ -187,7 +184,6 @@ import { HttpClientModule } from '@angular/common/http';
     AccordionModule,
     ListboxModule,
     FileUploadModule,
-    CountoModule,
     FormatNumberInput
   ],
   entryComponents: [
