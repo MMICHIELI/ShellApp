@@ -1,0 +1,11 @@
+<h4>{{ 'PRODUCT.PRODUCT_DISC.SECTION_TITLE' | translate }}</h4>
+
+<div class="block">
+  <div class="content-section">
+    <sc-table-consult
+      [columns]="productDiscsColumns"
+      [rows]="product.productDiscs"
+      [withCheckBoxes]="false">
+    </sc-table-consult>
+  </div>
+</div>

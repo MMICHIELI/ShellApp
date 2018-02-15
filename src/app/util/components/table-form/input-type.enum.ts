@@ -1,0 +1,20 @@
+/**
+ * Created by gbray on 27/04/2017.
+ */
+export enum InputTypeEnum {
+  TEXT = 1,
+  NUMBER = 2,
+  DATE = 3,
+  LABEL = 4,
+  AUTO_COMPLETE = 5,
+  SELECT = 6,
+  MULTI_SELECT = 7,
+  CHECK_BOX = 8,
+  SELECT_FIELD = 9,
+  LABEL_INSIDE_MODEL = 10,
+  LABEL_INSIDE_SUB_MODEL = 11,
+  LABEL_INSIDE_SUB_SUB_MODEL = 12,
+  AUTO_COMPLETE_INSIDE_MODEL = 13,
+  SIMPLE_AUTO_COMPLETE = 14,
+  ICON_ACTION = 15
+}
